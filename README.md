@@ -61,57 +61,6 @@ flowchart LR
 | **Testing** | JUnit 5, AssertJ, WireMock, Testcontainers |
 
 
-## 📂 Project Documentation Hub
-
-This repository maintains a comprehensive architecture and product documentation matrix. *Click on any document link to view the specific file.*
-
-###  Phase 1: Product Strategy & UX
-
-| Document | Purpose | Location |
-| --- | --- | --- |
-| **Product Requirements Document** | What are we building, for whom, and why? | [`docs/product/prd.md`](https://www.google.com/search?q=./docs/product/prd.md) |
-| **Product Vision & Roadmap** | Scope of MVP and future iterations | [`docs/product/vision-roadmap.md`](https://www.google.com/search?q=./docs/product/vision-roadmap.md) |
-| **User Flow & Wireframes** | Application navigation and state behavior | [`docs/design/user-flows.md`](https://www.google.com/search?q=./docs/design/user-flows.md) |
-
-###  Phase 2: Architecture & Engineering
-
-| Document | Purpose | Location |
-| --- | --- | --- |
-| **System Architecture** | Pipeline flow, service integrations, and data ingestion | [`docs/engineering/architecture.md`](https://www.google.com/search?q=./docs/engineering/architecture.md) |
-| **Detailed Pipeline Flow** | Granular step-by-step ETL execution mapping | [`docs/engineering/detailed-pipeline.md`](https://www.google.com/search?q=./docs/engineering/detailed-pipeline.md) |
-| **UML Class Diagram** | Object-Oriented design and design patterns | [`docs/engineering/class-diagram.md`](https://www.google.com/search?q=./docs/engineering/class-diagram.md) |
-| **Data Model & Schema** | SQLite entities, relationships, constraints, and migrations | [`docs/engineering/database.md`](https://www.google.com/search?q=./docs/engineering/database.md) |
-| **API & AI Specification** | LLM endpoints, prompt schemas, requests, and responses | [`docs/engineering/api.md`](https://www.google.com/search?q=./docs/engineering/api.md) |
-| **Security & Threat Model** | Credential handling and local-first data protection | [`docs/engineering/security.md`](https://www.google.com/search?q=./docs/engineering/security.md) |
-| **Tech Decision Records (ADRs)** | Why we chose Java, specific parsers, and hybrid AI | [`docs/engineering/adrs.md`](https://www.google.com/search?q=./docs/engineering/adrs.md) |
-
-### Phase 3: QA, Testing & Ops
-
-| Document | Purpose | Location |
-| --- | --- | --- |
-| **Testing Strategy** | Unit, integration, and E2E testing using Dummy Statements | [`docs/qa/testing-strategy.md`](https://www.google.com/search?q=./docs/qa/testing-strategy.md) |
-| **Deployment & Ops** | Execution instructions, cron-jobs, and file-watcher setups | [`docs/ops/deployment.md`](https://www.google.com/search?q=./docs/ops/deployment.md) |
-
-
-##  Repository Structure
-
-```text
-statement-processor/
-├── pom.xml
-├── .env.example
-├── docs/                        # Project Documentation Hub (See index above)
-├── config/                      # App settings & category mappings
-└── src/
-    ├── main/java/com/finparse/
-    │   ├── ingestion/           # Reading raw files (CSV/PDF)
-    │   ├── model/               # Domain Entities (Transaction, Account)
-    │   ├── engine/              # Deduplication & Normalization
-    │   ├── enrichment/          # Rule-based & LLM categorization
-    │   └── storage/             # SQLite / CSV Output
-    └── test/resources/          # Dummy/Sanitized Statements for Testing
-
-```
-
 ## 📌 Pipeline Strategy Board
 
 ```mermaid
@@ -170,4 +119,47 @@ mindmap
       Zero-Cloud PII
 
 ```
+## 📂 Project Documentation Hub
+
+This repository maintains a comprehensive architecture and product documentation matrix. *Click on any document link to view the specific file.*
+
+<details>
+<summary><b>📋 Click to expand: Application Master Specification Taxonomy</b></summary>
+
+This project's documentation adheres to the following enterprise specification standard:
+
+```text
+APPLICATION MASTER SPECIFICATION
+│
+├── 01 Product                  # Strategic alignment and user needs
+│   ├── Vision & Problem        # Why this pipeline exists and MVP scope
+│   └── Requirements (PRD)      # User stories and BDD acceptance criteria
+│
+├── 02 Architecture             # High-level system design
+│   ├── System Architecture     # C4 Model container diagrams
+│   ├── Detailed Pipeline       # Granular step-by-step ETL execution mapping
+│   ├── Class Diagrams          # Object-oriented domain design (UML)
+│   └── ADRs                    # Architecture Decision Records (Historical log)
+│
+├── 03 Data                     # Persistence and data integrity
+│   ├── Database Schema         # SQLite DDL and entity relationships
+│   └── Data Lifecycle          # Sanitization and PII retention policies
+│
+├── 04 APIs                     # External system interactions
+│   ├── Integration Contracts   # LLM endpoints and JSON schema enforcement
+│   └── Authentication          # API key header management
+│
+├── 05 Security                 # Threat mitigation
+│   ├── Threat Model            # STRIDE methodology and local-first boundaries
+│   └── Privacy                 # Pre-LLM data redaction and zero-cloud PII
+│
+├── 06 Engineering              # Development standards
+│   ├── Repository Structure    # Modular separation of concerns
+│   └── Testing Strategy        # Unit/Integration tiers using Dummy Data
+│
+└── 07 Operations               # Running the software
+    ├── Deployment              # Native OS execution instructions
+    └── Automation              # Systemd/Cron configuration for file watching
+```
+
 ---
